@@ -10,8 +10,8 @@ export default function ChatbotComponent() {
     const [preference, setPreference] = useState('');
     const messagesEndRef = useRef(null);
 
-    // Use environment variable for the API token
-    const client = new InferenceClient(process.env.REACT_APP_HF_TOKEN);
+    const apiToken = process.env.REACT_APP_HF_TOKEN;
+    const client = new InferenceClient(apiToken);
 
     const handleSend = async () => {
         if (!input.trim()) return;
